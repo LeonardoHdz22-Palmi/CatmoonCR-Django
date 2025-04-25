@@ -1,0 +1,165 @@
+/* ---- Estilos generales ---- */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ---- Fondo pastel para modo claro ---- */
+.modo-claro {
+    background: linear-gradient(to right, #ffdde1, #ee9ca7, #ff758c, #ff7eb3);
+    color: #5a5a5a;
+}
+
+/* ---- Fondo oscuro ---- */
+.modo-oscuro {
+    background: #222;
+    color: #f5f5f5;
+}
+
+/* ---- Contenedor ---- */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ---- Botón de modo ---- */
+#modo-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background: #ff758c;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#modo-toggle:hover {
+    background: #ff517a;
+}
+
+/* ---- Navbar ---- */
+.navbar {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modo-oscuro .navbar {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* ---- Tarjetas de productos ---- */
+.producto-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modo-oscuro .producto-card {
+    background: rgba(40, 40, 40, 0.9);
+}
+
+/* ---- Ajustes para la imagen de fondo ---- */
+.caracteristicas {
+    max-width: 2500px; /* Mismo ancho que el contenedor principal */
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 650px; /* Ajusta según necesidad */
+    object-fit: contain; /* Evita que se corte */
+}
+.caracteristicas {
+    margin-top: 20px; /* Asegura que no quede pegado al carrusel */
+}
+
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Ajusta el tamaño del área de los botones */
+    opacity: 0.8; /* Mejora la visibilidad */
+}
+
+.carousel-control-prev {
+    left: 10px; /* Ajusta la posición hacia la izquierda */
+}
+
+.carousel-control-next {
+    right: 10px; /* Ajusta la posición hacia la derecha */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Hace las flechas más visibles */
+    border-radius: 50%; /* Redondea los botones */
+    padding: 10px; /* Ajusta el tamaño */
+}
+.carousel-control-prev, 
+.carousel-control-next {
+    top: 50%; /* Centra los botones verticalmente */
+    transform: translateY(-50%);
+}
+
+
+.navbar {
+    background: linear-gradient(to right, #ffdde1, #ee9ca7, #ff758c, #ff7eb3); /* Fondo en tonos pastel */
+    color: #5a5a5a;
+}
+
+.navbar a {
+    color: #5a5a5a; /* Color de los enlaces */
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #ff517a; /* Color al pasar el mouse */
+}
+
+
+.modo-oscuro .navbar {
+    background: rgba(20, 20, 20, 0.9); /* Fondo oscuro */
+    color: #f5f5f5;
+}
+
+.modo-oscuro .navbar a {
+    color: #f5f5f5;
+}
+
+.modo-oscuro .navbar a:hover {
+    color: #ff758c; /* Resaltar en tonos pastel */
+}
+
+
+.footer {
+    
+    background-color: #ffafbd; /* Usa el mismo color del menú */
+    color: #333; /* Color del texto */
+    text-align: center;
+    padding: 20px 0;
+    border-top: 3px solid #ff758c; /* Opcional: Borde para separación */
+}
+.modo-claro footer {
+    background-color: #f8d7da; /* Color pastel claro */
+    color: black;
+}
+
+.modo-oscuro footer {
+    background-color: #222; /* Color oscuro */
+    color: white;
+}

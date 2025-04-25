@@ -1,0 +1,56 @@
+{% load static %}
+<!-- Productos -->
+<div class="row">
+    {% for producto in productos %}
+    <div class="col-md-4">
+        <div class="card mb-4 producto-card">
+            {% if producto.imagen %}
+                <img src="{{ producto.imagen.url }}" class="card-img-top" alt="{{ producto.nombre }}">
+            {% else %}
+                <img src="{% static 'img/default.jpg' %}" class="card-img-top" alt="Imagen no disponible">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ producto.nombre }}</h5>
+                <p class="card-text">{{ producto.descripcion }}</p>
+                <p class="card-text"><strong>Precio: </strong>₡{{ producto.precio|floatformat:0 }}</p>
+
+                <!-- Botón de WhatsApp para compra -->
+                <a href="https://wa.me/+50670087533?text=¡Hola!%20Me%20interesa%20el%20producto%20{{ producto.nombre }}" 
+                   target="_blank" class="btn btn-success">
+                    <i class="bi bi-whatsapp"></i> Comprar
+                </a>
+
+               <!-- 🔹 Botones para compartir con descripciones -->
+<div class="d-flex justify-content-around mt-3">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/?text=Mira%20este%20producto:%20{{ request.build_absolute_uri }}" 
+       target="_blank" class="btn btn-success" title="Compartir en WhatsApp" data-bs-toggle="tooltip">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" 
+       target="_blank" class="btn btn-primary" title="Compartir en Facebook" data-bs-toggle="tooltip">
+        <i class="bi bi-facebook"></i>
+    </a>
+
+    <!-- Twitter (X) -->
+    <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text=Mira%20este%20producto!" 
+       target="_blank" class="btn btn-info" title="Compartir en Twitter" data-bs-toggle="tooltip">
+        <i class="bi bi-twitter"></i>
+    </a>
+
+    <!-- Telegram -->
+    <a href="https://t.me/share/url?url={{ request.build_absolute_uri }}&text=Mira%20este%20producto!" 
+       target="_blank" class="btn btn-secondary" title="Compartir en Telegram" data-bs-toggle="tooltip">
+        <i class="bi bi-telegram"></i>
+    </a>
+</div>
+
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-center">No hay productos en esta categoría.</p>
+    {% endfor %}
+</div>
